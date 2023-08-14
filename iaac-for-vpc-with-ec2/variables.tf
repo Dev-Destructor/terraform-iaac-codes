@@ -13,7 +13,7 @@ variable "region" {
 variable "key-pair" {
   description = "AWS key pair"
   type        = string
-  default     = "tf-key-pair"
+  default     = "tf-key-pair.pem"
 }
 
 variable "instance" {
@@ -43,6 +43,29 @@ variable "ami_map" {
     "us-west-1"      = "ami-0f8e81a3da6e2510a"
     "us-west-2"      = "ami-03f65b8614a860c29"
   }
+}
+
+variable "user_ip" {
+  description = "User IP"
+  default     = "0.0.0.0/0"
+}
+
+variable "db_port" {
+  description = "value of db port"
+  type        = number
+  default     = 3306
+}
+
+variable "public_instance_listening_port" {
+  description = "Public instance listening port"
+  type        = number
+  default     = 3000
+}
+
+variable "private_instance_listening_port" {
+  description = "Private instance listening port"
+  type        = number
+  default     = 9000
 }
 
 variable "auto-scale-max-size" {
