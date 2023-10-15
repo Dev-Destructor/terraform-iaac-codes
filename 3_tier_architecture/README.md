@@ -24,7 +24,7 @@
 3. Use
 
    ```bash
-   cd iaac-for-vpc-with-ec2
+   cd 3_tier_architecture
    ```
 
    to go to the directory
