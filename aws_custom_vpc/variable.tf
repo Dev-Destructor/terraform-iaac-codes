@@ -1,27 +1,39 @@
 variable "region" {
-  default = "ap-south-1"
+  type        = string
+  description = "Name of the region"
 }
 
 variable "profile" {
-  default = "destructor"
+  type        = string
+  description = "AWS profile of the user"
 }
 
 variable "vpc_cidr" {
-  default = "192.168.0.0/16"
+  type        = string
+  description = "cidr block for the VPC"
+  default     = "192.168.0.0/16"
 }
 
 variable "public_subnet_01_cidr" {
-  default = "192.168.0.0/24"
+  type        = string
+  description = "value of the public subnet 01 cidr block"
+  default     = "192.168.0.0/24"
 }
 
 variable "public_subnet_02_cidr" {
-  default = "192.168.64.0/24"
+  type        = string
+  description = "value of the public subnet 02 cidr block"
+  default     = "192.168.64.0/24"
 }
 
 variable "private_subnet_01_cidr" {
-  default = "192.168.128.0/24"
+  type        = string
+  description = "value of the private subnet 01 cidr block"
+  default     = "192.168.128.0/24"
 }
 
 variable "private_subnet_02_cidr" {
-  default = "192.168.192.0/24"
+  type        = string
+  description = "value of the private subnet 02 cidr block"
+  default     = "192.168.192.0/24"
 }
