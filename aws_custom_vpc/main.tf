@@ -14,8 +14,9 @@ resource "aws_vpc" "prod-vpc" {
 
 // Subnets
 resource "aws_subnet" "public_subnet_01" {
-  vpc_id     = aws_vpc.prod-vpc.id
-  cidr_block = var.public_subnet_01_cidr
+  vpc_id            = aws_vpc.prod-vpc.id
+  cidr_block        = var.public_subnet_01_cidr
+  availability_zone = "${var.region}a"
 
   tags = {
     Name = "prod_public_subnet_01"
@@ -23,8 +24,9 @@ resource "aws_subnet" "public_subnet_01" {
 }
 
 resource "aws_subnet" "public_subnet_02" {
-  vpc_id     = aws_vpc.prod-vpc.id
-  cidr_block = var.public_subnet_02_cidr
+  vpc_id            = aws_vpc.prod-vpc.id
+  cidr_block        = var.public_subnet_02_cidr
+  availability_zone = "${var.region}b"
 
   tags = {
     Name = "prod_public_subnet_02"
@@ -32,8 +34,9 @@ resource "aws_subnet" "public_subnet_02" {
 }
 
 resource "aws_subnet" "private_subnet_01" {
-  vpc_id     = aws_vpc.prod-vpc.id
-  cidr_block = var.private_subnet_01_cidr
+  vpc_id            = aws_vpc.prod-vpc.id
+  cidr_block        = var.private_subnet_01_cidr
+  availability_zone = "${var.region}a"
 
   tags = {
     Name = "prod_private_subnet_01"
@@ -41,8 +44,9 @@ resource "aws_subnet" "private_subnet_01" {
 }
 
 resource "aws_subnet" "private_subnet_02" {
-  vpc_id     = aws_vpc.prod-vpc.id
-  cidr_block = var.private_subnet_02_cidr
+  vpc_id            = aws_vpc.prod-vpc.id
+  cidr_block        = var.private_subnet_02_cidr
+  availability_zone = "${var.region}b"
 
   tags = {
     Name = "prod_private_subnet_02"
